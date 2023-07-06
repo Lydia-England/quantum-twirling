@@ -67,7 +67,7 @@ with open('twirling_groups.pkl', 'rb') as f:
     two-qubit gate, and utilizes the dictionary of twirling sets generated above.
 """
 
-class pauli_twirling(TransformationPass):
+class PauliTwirling(TransformationPass):
     """Pauli twirl an input circuit.
     """
     def __init__(self, twirling_gate, seed=None):
