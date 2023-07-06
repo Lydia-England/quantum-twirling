@@ -2,8 +2,6 @@
 A Python package designed for fast implementation of [Pauli Twirling](/##What-Is-Pauli-Twirling?) in [Qiskit](https://qiskit.org/documentation/) circuits.
 
 
-
-
 ## Features
 --- 
 - It includes a fast built-in dictionary of Pauli Twirling Sets for Qiskit two-qubit Clifford gates CX, CY, CZ, CH, DCX, CSX, CSdg, ECR, SWAP, iSWAP.
@@ -13,11 +11,12 @@ A Python package designed for fast implementation of [Pauli Twirling](/##What-Is
 
 ## Contents
 ---
-- [Features](/##Features)
-- [What is Pauli Twirling?](/##What-is-Pauli-Twirling?)
-- [Usage and Examples](/##Usage-and-Examples)
-- [Acknowledgements](/##Acknowledgements)
-
+- [Features](/#Features)
+- [What is Pauli Twirling?](/#What-is-Pauli-Twirling?)
+- [Implementation of Pauli Twirling in Academic Literature](#/Implementation-of-Pauli-Twirling)
+- [Function Documentation](/#Function-Documentation)
+- [Usage and Examples](/#Usage-and-Examples)
+- [Acknowledgements](/#Acknowledgements)
 
 
 ## What is Pauli Twirling?
@@ -37,9 +36,6 @@ That is, the Pauli Twirling Set for a two-qubit Clifford gate is a set of four P
 - [Scalable error mitigation for noisy quantum circuites produces competitive expectation values (Kim, et. al., 2021)](https://www.nature.com/articles/s41567-022-01914-3)
 - [Constructing smaller Pauli twirling sets for arbitrary error channels (Cai and Benjamin, 2018)](https://arxiv.org/abs/1807.04973v3)
 
-
-## Dependancies
----
 
 
 ## Function Documentation
