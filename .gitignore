@@ -1,0 +1,5 @@
+# Untracked files:
+tests/
+.eggs/
+quantum_twirling.egg*
+quantum_twirling/__pycache__*
