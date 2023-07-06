@@ -55,8 +55,8 @@ two_qubit_gates = [CX, CY, CZ, CH, CS, DCX,
                    CSX, CSdg, ECR, Swap, iSwap]
 
 
-with open('twirling_groups.pkl', 'rb') as f:
-	twirling_groups = pickle.load(f)
+# with open('twirling_groups.pkl', 'rb') as f:
+#    twirling_groups = pickle.load(f)
 
 
 ##################################
