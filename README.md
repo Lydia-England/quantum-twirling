@@ -90,13 +90,30 @@ That is, the Pauli Twirling Set for a two-qubit Clifford gate is a set of four P
 ---
 
 ```python
+import qiskit
 import quantum_twirling
+from quantum_twirling import load_pauli_twirling_sets
+from quantum_twirling.generate_pauli_twirling_sets import generate_pauli_twirling_sets
+from quantum_twirling.pauli_twirling import PauliTwirling
 ```
 
 ### Load Pauli Twirling Sets
+Load the entire existing dictionary with `load_pauli_twirling_dict()`:
 ```python
-from quantum_twirling import load_pauli_twirling_sets
-cx_dict = get_pauli_twirling_dict('cx')
+twirl_dict = load_pauli_twirling_sets.load_pauli_twirling_dict()
+```
+Load individual gate twirling sets with: `cxgate_twirls()`, etc:
+```python
+cx_twirls = load_pauli_twirling_sets.load_cxgate_twirls()
+cy_twirls = load_pauli_twirling_sets.load_cygate_twirls()
+cz_twirls = load_pauli_twirling_sets.load_czgate_twirls()
+ch_twirls = load_pauli_twirling_sets.load_chgate_twirls()
+dcx_twirls = load_pauli_twirling_sets.load_dcxgate_twirls()
+csx_twirls = load_pauli_twirling_sets.load_csxgate_twirls()
+csdg_twirls = load_pauli_twirling_sets.load_csdggate_twirls()
+ecr_twirls = load_pauli_twirling_sets.load_ecrgate_twirls()
+swap_twirls = load_pauli_twirling_sets.load_swapgate_twirls()
+iswap_twirls = load_pauli_twirling_sets.load_iswapgate_twirls()
 ```
 
 ### Generate Pauli Twirling Sets
