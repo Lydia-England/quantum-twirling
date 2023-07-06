@@ -49,7 +49,7 @@ import quantum_twirling
 
 ## Acknowledgements
 ---
-
+[IBM Quantum: Generating Pauli-twirled circuits in Qiskit](https://quantum-enablement.org/posts/2023/2023-02-02-pauli_twirling.html)
 
 
 
