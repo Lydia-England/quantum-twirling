@@ -2,8 +2,6 @@
 A Python package designed for fast implementation of [Pauli Twirling](/##What-Is-Pauli-Twirling?) in [Qiskit](https://qiskit.org/documentation/) circuits.
 
 
-
-
 ## Features
 --- 
 - It includes a fast built-in dictionary of Pauli Twirling Sets for Qiskit two-qubit Clifford gates CX, CY, CZ, CH, DCX, CSX, CSdg, ECR, SWAP, iSWAP.
@@ -13,11 +11,15 @@ A Python package designed for fast implementation of [Pauli Twirling](/##What-Is
 
 ## Contents
 ---
-- [Features](/##Features)
-- [What is Pauli Twirling?](/##What-is-Pauli-Twirling?)
-- [Usage and Examples](/##Usage-and-Examples)
-- [Acknowledgements](/##Acknowledgements)
-
+- [Features](/#Features)
+- [What is Pauli Twirling?](/#What-is-Pauli-Twirling?)
+  - [Implementation of Pauli Twirling in Academic Literature](#/Implementation-of-Pauli-Twirling)
+- [Function Documentation](/#Function-Documentation)
+- [Usage and Examples](/#Usage-and-Examples)
+  - [Load](/#Load-Pauli-Twirling-Sets)
+  - [Generate](/#Generate-Pauli-Twirling-Sets)
+  - [Twirl Qiskit Circuits](/#Twirl-Qiskit-Circuits)
+- [Acknowledgements](/#Acknowledgements)
 
 
 ## What is Pauli Twirling?
@@ -38,9 +40,55 @@ That is, the Pauli Twirling Set for a two-qubit Clifford gate is a set of four P
 - [Constructing smaller Pauli twirling sets for arbitrary error channels (Cai and Benjamin, 2018)](https://arxiv.org/abs/1807.04973v3)
 
 
+## Supported Qiskit Gates 
+- [CXGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CXGate.html)
+- [CYGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CYGate.html)
+- [CZGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CZGate.html)
+- [CHGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CHGate.html)
+- [DCXGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.DCXGate.html)
+- [CSXGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CSXGate.html)
+- [CSdgGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CSdgGate.html)
+- [ECRGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.ECRGate.html)
+- [SWAPGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.SwapGate.html)
+- [iSWAPGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.iSwapGate.html)
+
+
+## Function Documentation
+---
+`quantum_twirling.load_pauli_twirling_sets.load_pauli_twirling_dict()`
+
+`quantum_twirling.load_pauli_twirling_sets.load_cxgate_twirls()`
+
+`quantum_twirling.load_pauli_twirling_sets.load_cygate_twirls()`
+
+`quantum_twirling.load_pauli_twirling_sets.load_czgate_twirls()`
+
+`quantum_twirling.load_pauli_twirling_sets.load_chgate_twirls()`
+
+`quantum_twirling.load_pauli_twirling_sets.load_dcxgate_twirls()`
+
+`quantum_twirling.load_pauli_twirling_sets.load_csxgate_twirls()`
+
+`quantum_twirling.load_pauli_twirling_sets.load_csdggate_twirls()`
+
+`quantum_twirling.load_pauli_twirling_sets.load_ecrgate_twirls()`
+
+`quantum_twirling.load_pauli_twirling_sets.load_swapgate_twirls()`
+
+`quantum_twirling.load_pauli_twirling_sets.load_iswapgate_twirls()`
+
+
+`generate_pauli_twirling_sets(TwoQubitGate())`
+- The `TwoQubitGate()` should to be a two-qubit instance of the Qiskit [Gate](https://qiskit.org/documentation/stubs/qiskit.circuit.Gate.html) class.
+- Finds Pauli Twirls for the given Gate; returns a structure of the form: `[(gates,phase), (gates,phase), ...)]`.
+
+`CLASS PauliTwirling(PassManager)`
+-  Bases: `PassManager` ([PassManager Class in Qiskit](https://qiskit.org/documentation/stubs/qiskit.transpiler.PassManager.html))
+
 
 ## Usage and Examples
 ---
+
 ```python
 import quantum_twirling
 ```
@@ -58,12 +106,33 @@ twirling_sets = generate_pauli_twirling_sets(TwoQubitGate)
 ```
 
 ### Twirl Qiskit Circuits
+Import the `PauliTwirling` class:
 ```python
 from quantum_twirling.pauli_twirling import PauliTwirling
-pm = PassManager([PauliTwirling('cx', seed=54321)])
-twirl_qc = pm.run(quantum_circuit)
+```
+Create a two-qubit quantum circuit to Pauli Twirl.
+Note that the two-qubit gate in this circuit is a CX gate. 
+Thus, we can use our `cx_dict` retrieved from `get_pauli_twirling_dict('cx')`, earlier.
+```python
+qc = QuantumCircuit(3)
+qc.h(1)
+qc.cx(1,0)
+qc.cx(1,2)
+qc.draw('mpl')
+```
+To use the pass, attach to a `PassManager`. 
+Here, we do that and tell our `PauliTwirling` pass to twirl CX gates in our `cx_dict`.
+```python
+pm = PassManager([PauliTwirling('cx_dict', seed=54321)])
+twirl_qc = pm.run(qc)
 twirl_qc.draw('mpl')
 ```
+Call `pm.run` once and draw the circuit:
+```python
+twirl_qc = pm.run(qc)
+twirl_qc.draw('mpl')
+```
+Subsequent calls will yield other circuits that are likewise randomly twirled.
 
 
 ## Acknowledgements
