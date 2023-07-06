@@ -40,22 +40,43 @@ That is, the Pauli Twirling Set for a two-qubit Clifford gate is a set of four P
 - [Constructing smaller Pauli twirling sets for arbitrary error channels (Cai and Benjamin, 2018)](https://arxiv.org/abs/1807.04973v3)
 
 
+## Supported Qiskit Gates 
+- [CXGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CXGate.html)
+- [CYGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CYGate.html)
+- [CZGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CZGate.html)
+- [CHGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CHGate.html)
+- [DCXGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.DCXGate.html)
+- [CSXGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CSXGate.html)
+- [CSdgGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CSdgGate.html)
+- [ECRGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.ECRGate.html)
+- [SWAPGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.SwapGate.html)
+- [iSWAPGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.iSwapGate.html)
+
 
 ## Function Documentation
 ---
-`get_pauli_twirling_dict(gate="", IncludePhase=True)`
-- Gate must be one of the following gates (links to Qiskit documentation):
-  - [CXGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CXGate.html)
-  - [CYGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CYGate.html)
-  - [CZGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CZGate.html)
-  - [CHGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CHGate.html)
-  - [DCXGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.DCXGate.html)
-  - [CSXGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CSXGate.html)
-  - [CSdgGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CSdgGate.html)
-  - [ECRGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.ECRGate.html)
-  - [SWAPGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.SwapGate.html)
-  - [iSWAPGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.iSwapGate.html)
-- There isn't support for including/not including the phase yet; it's included no matter what is passed to `IncludePhase`.
+`quantum_twirling.load_pauli_twirling_sets.load_pauli_twirling_dict()`
+
+`quantum_twirling.load_pauli_twirling_sets.load_cxgate_twirls()`
+
+`quantum_twirling.load_pauli_twirling_sets.load_cygate_twirls()`
+
+`quantum_twirling.load_pauli_twirling_sets.load_czgate_twirls()`
+
+`quantum_twirling.load_pauli_twirling_sets.load_chgate_twirls()`
+
+`quantum_twirling.load_pauli_twirling_sets.load_dcxgate_twirls()`
+
+`quantum_twirling.load_pauli_twirling_sets.load_csxgate_twirls()`
+
+`quantum_twirling.load_pauli_twirling_sets.load_csdggate_twirls()`
+
+`quantum_twirling.load_pauli_twirling_sets.load_ecrgate_twirls()`
+
+`quantum_twirling.load_pauli_twirling_sets.load_swapgate_twirls()`
+
+`quantum_twirling.load_pauli_twirling_sets.load_iswapgate_twirls()`
+
 
 `generate_pauli_twirling_sets(TwoQubitGate())`
 - The `TwoQubitGate()` should to be a two-qubit instance of the Qiskit [Gate](https://qiskit.org/documentation/stubs/qiskit.circuit.Gate.html) class.
