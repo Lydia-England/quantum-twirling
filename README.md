@@ -13,9 +13,12 @@ A Python package designed for fast implementation of [Pauli Twirling](/##What-Is
 ---
 - [Features](/#Features)
 - [What is Pauli Twirling?](/#What-is-Pauli-Twirling?)
-- [Implementation of Pauli Twirling in Academic Literature](#/Implementation-of-Pauli-Twirling)
+  - [Implementation of Pauli Twirling in Academic Literature](#/Implementation-of-Pauli-Twirling)
 - [Function Documentation](/#Function-Documentation)
 - [Usage and Examples](/#Usage-and-Examples)
+  - [Load](/#Load-Pauli-Twirling-Sets)
+  - [Generate](/#Generate-Pauli-Twirling-Sets)
+  - [Twirl Qiskit Circuits](/#Twirl-Qiskit-Circuits)
 - [Acknowledgements](/#Acknowledgements)
 
 
