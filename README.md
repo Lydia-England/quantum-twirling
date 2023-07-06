@@ -45,6 +45,25 @@ That is, the Pauli Twirling Set for a two-qubit Clifford gate is a set of four P
 import quantum_twirling
 ```
 
+### Load Pauli Twirling Sets
+```python
+from quantum_twirling import load_pauli_twirling_sets
+cx_dict = get_pauli_twirling_dict('cx')
+```
+
+### Generate Pauli Twirling Sets
+```python
+from quantum_twirling import generate_pauli_twirling_sets
+twirling_sets = generate_pauli_twirling_sets(TwoQubitGate)
+```
+
+### Twirl Qiskit Circuits
+```python
+from quantum_twirling.pauli_twirling import PauliTwirling
+pm = PassManager([PauliTwirling('cx', seed=54321)])
+twirl_qc = pm.run(quantum_circuit)
+twirl_qc.draw('mpl')
+```
 
 
 ## Acknowledgements
