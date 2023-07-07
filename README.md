@@ -1,5 +1,5 @@
 # Quantum-Twirling
-A Python package designed for fast implementation of [Pauli Twirling](/##What-Is-Pauli-Twirling?) in [Qiskit](https://qiskit.org/documentation/) circuits.
+A Python package designed for fast implementation of [Pauli Twirling](/#What-Is-Pauli-Twirling?) in [Qiskit](https://qiskit.org/documentation/) circuits.
 
 
 ## Features
@@ -31,7 +31,7 @@ It is implemented by sandwiching a two-qubit Clifford gate between randomly samp
 Crucially, the gates are selected such that the net operation, in the absence of noise, is unchanged.
 That is, the Pauli Twirling Set for a two-qubit Clifford gate is a set of four Pauli gates that when pre-pended and appended to a circuit containing the two-qubit gate, the unitary is equal to that of the single two-qubit gate alone.
 
-### Implementation of Pauli Twirling
+### Implementation of Pauli Twirling in Academic Literature
 ---
 - [Purification of noisy entanglement and faithful teleportation via noisy channels (Bennet, et. al., 1996)](https://arxiv.org/abs/quant-ph/9511027)
 - [Mixed state entanglement and quantum error correction (Bennet, et. al., 1996)](https://arxiv.org/abs/quant-ph/9604024)
@@ -40,17 +40,18 @@ That is, the Pauli Twirling Set for a two-qubit Clifford gate is a set of four P
 - [Constructing smaller Pauli twirling sets for arbitrary error channels (Cai and Benjamin, 2018)](https://arxiv.org/abs/1807.04973v3)
 
 
-## Supported Qiskit Gates 
-- [CXGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CXGate.html)
-- [CYGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CYGate.html)
-- [CZGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CZGate.html)
-- [CHGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CHGate.html)
-- [DCXGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.DCXGate.html)
-- [CSXGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CSXGate.html)
-- [CSdgGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CSdgGate.html)
-- [ECRGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.ECRGate.html)
-- [SWAPGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.SwapGate.html)
-- [iSWAPGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.iSwapGate.html)
+## Dictionary-Supported Qiskit Gates 
+Native Pauli Twirling Sets are included for the following common two-qubit Clifford gates in Qiskit: 
+- [CXGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CXGate.html) (Controlled X Gate, a.k.a. CNOT Gate)
+- [CYGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CYGate.html) (Controlled Y Gate)
+- [CZGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CZGate.html) (Controlled Z Gate)
+- [CHGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CHGate.html) (Controlled Hadamard Gate)
+- [DCXGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.DCXGate.html) (Double Controlled X Gate, a.k.a., Double CNOT Gate)
+- [CSXGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CSXGate.html) (Controlled Square Root of X Gate)
+- [CSdgGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.CSdgGate.html) (Controlled S^dagger Gate)
+- [ECRGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.ECRGate.html) (Echoed Cross-Resonance Gate)
+- [SWAPGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.SwapGate.html) (Swap Gate)
+- [iSWAPGate](https://qiskit.org/documentation/stubs/qiskit.circuit.library.iSwapGate.html) (Imaginary Swap Gate)
 
 
 ## Function Documentation
